@@ -5,7 +5,7 @@
   background-size: cover;
   width: 35%;
   margin: auto;
-  height: 680px;
+  height: 880px;
 }
 
 #searchIcon{
@@ -22,7 +22,7 @@
 .mainDiv{
   width: 58%;
   margin: auto;
-  height: 650px;
+  height: 800px;
   border: 1px solid black;
   margin-top: 30px;
   border-radius: 10px;
@@ -35,7 +35,7 @@
 .graphDiv{
   width :85%;
   margin: auto;
-  height: 350px;
+  height: 450px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   border-radius: 10px;
 }
