@@ -1,0 +1,53 @@
+#App {
+  text-align: center;
+  background-image: url("https://media.gettyimages.com/videos/abstract-blue-green-yellow-background-blurred-motion-defocused-liquid-video-id1185723808?s=640x640");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 35%;
+  margin: auto;
+  height: 680px;
+}
+
+#searchIcon{
+  width: 20px;
+  height: 20px;
+}
+.inputBox{
+  width: 85%;
+  height: 35px;
+  margin-top: 40px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.mainDiv{
+  width: 58%;
+  margin: auto;
+  height: 650px;
+  border: 1px solid black;
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: white;
+}
+.WetherDisplay{
+  display: flex;
+  gap: 20px;
+}
+.graphDiv{
+  width :85%;
+  margin: auto;
+  height: 350px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 10px;
+}
+.graphDiv:hover{
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.graphData{
+  display: flex;
+  gap: 30px;
+  margin-left: 10px;
+}
+.graphData>p{
+  font-weight: 700;
+  font-size: 40px;
+}
