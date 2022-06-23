@@ -50,7 +50,7 @@ const data = [
 export function GraphData() {
 
   const key = "faf27d359d96ec53800e51b07ef0f624";
-  
+
   return (
     <div>
        <LineChart
