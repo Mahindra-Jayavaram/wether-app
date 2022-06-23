@@ -5,19 +5,24 @@ import { Graph } from "./Graph";
 import axios from "axios";
 
 export const Wether = () => {
-  const [data, setData] = useState([])
+  const apiKey = "feee123fc08f78252e9aa9055bd32cf9"
+  const [wetherdata, setWetherData] = useState([{}])
   const [city,setCity] = useState("");
   console.log("city",city);
 
-  useEffect(()=>{
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=hyderabad&appid=feee123fc08f78252e9aa9055bd32cf9&units=metric`).then((res)=>res.json()).then((res)=>{
-      setData(res.data);
-    })
-  },[])
-  console.log("city Data",data)
+  // useEffect(()=>{
+  //   getData()
+  // },[])
+  console.log("city Data",wetherdata)
 
-  const getData = ()=>{
-
+  const getData = (e)=>{
+    if(e.key == "Enter")
+    {
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`).then((res)=>res.json()).then((data)=>{
+        setWetherData(data);
+        setCity("");
+      })
+    }
   }
   return (
     <div className="mainDiv">
@@ -25,6 +30,7 @@ export const Wether = () => {
         <div className="inputDiv">
         <input className="inputBox" placeholder="  Search..." type="Text" name = "cityName" value={city} 
         onChange ={(e)=>{setCity(e.target.value)}}
+        onKeyPress ={getData}
         />
         <SearchIcon
           id="serchIcon"
@@ -35,10 +41,16 @@ export const Wether = () => {
             marginLeft: "-25px",
           }}
         />
-
-        
+        <h3>City Name : {wetherdata.name}</h3>
       </div>
-      <div className="WetherDisplay">
+      {/* {typeof wetherdata.main === "undefined" ? (
+        <div>
+          <p>Welcome to the Wether app Please enter the city name for wether details</p>
+        </div>
+      ) :
+      ( */}
+        <>
+        <div className="WetherDisplay">
         <div>
           <h3>Sun</h3>
           <p>32°C 19°C</p>
@@ -53,7 +65,7 @@ export const Wether = () => {
           <p>Sunny</p>
         </div>
         <div>
-          <h3>Sun</h3>
+          <h3>Mon</h3>
           <p>32°C 19°C</p>
           <SunIcon
             style={{
@@ -66,7 +78,7 @@ export const Wether = () => {
           <p>Sunny</p>
         </div>
         <div>
-          <h3>Sun</h3>
+          <h3>Tue</h3>
           <p>32°C 19°C</p>
           <SunIcon
             style={{
@@ -79,7 +91,7 @@ export const Wether = () => {
           <p>Sunny</p>
         </div>
         <div>
-          <h3>Sun</h3>
+          <h3>Wed</h3>
           <p>32°C 19°C</p>
           <SunIcon
             style={{
@@ -92,7 +104,7 @@ export const Wether = () => {
           <p>Sunny</p>
         </div>
         <div>
-          <h3>Sun</h3>
+          <h3>Thurs</h3>
           <p>32°C 19°C</p>
           <SunIcon
             style={{
@@ -106,6 +118,8 @@ export const Wether = () => {
         </div>
       </div>
       <Graph/>
+      </>
+      {/* )} */}
     </div>
   );
 };
